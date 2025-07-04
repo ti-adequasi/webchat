@@ -22,14 +22,14 @@ export class AnalyticsHelper {
    * @async
    */
   async init() {
-    if (!this.analyticsToken) {
-      return;
-    }
+    // if (!this.analyticsToken) {
+    //   return;
+    // }
 
-    let [analytics] = await AnalyticsBrowser.load({
-      writeKey: this.analyticsToken,
-    });
-    this.analytics = analytics;
+    // let [analytics] = await AnalyticsBrowser.load({
+    //   writeKey: this.analyticsToken,
+    // });
+    // this.analytics = analytics;
   }
 
   /**

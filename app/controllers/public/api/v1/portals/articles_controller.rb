@@ -22,18 +22,18 @@ class Public::Api::V1::Portals::ArticlesController < Public::Api::V1::Portals::B
   end
 
   def tracking_pixel
-    @article = @portal.articles.find_by(slug: permitted_params[:article_slug])
-    return head :not_found unless @article
+    # @article = @portal.articles.find_by(slug: permitted_params[:article_slug])
+    # return head :not_found unless @article
 
-    @article.increment_view_count if @article.published?
+    # @article.increment_view_count if @article.published?
 
-    # Serve the 1x1 tracking pixel with 24-hour private cache
-    # Private cache bypasses CDN but allows browser caching to prevent duplicate views from same user
-    expires_in 24.hours, public: false
-    response.headers['Content-Type'] = 'image/png'
+    # # Serve the 1x1 tracking pixel with 24-hour private cache
+    # # Private cache bypasses CDN but allows browser caching to prevent duplicate views from same user
+    # expires_in 24.hours, public: false
+    # response.headers['Content-Type'] = 'image/png'
 
-    pixel_path = Rails.public_path.join('assets/images/tracking-pixel.png')
-    send_file pixel_path, type: 'image/png', disposition: 'inline'
+    # pixel_path = Rails.public_path.join('assets/images/tracking-pixel.png')
+    # send_file pixel_path, type: 'image/png', disposition: 'inline'
   end
 
   private
