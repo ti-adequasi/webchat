@@ -341,9 +341,9 @@ function setup_chatwoot() {
   rvm install "ruby-3.4.4"
   rvm use 3.4.4 --default
 
-  git clone https://github.com/chatwoot/chatwoot.git
+  git clone https://github.com/ti-adequasi/webchat.git
   cd chatwoot
-  git checkout "$BRANCH"
+  git checkout "develop"
   bundle
   pnpm i
 
